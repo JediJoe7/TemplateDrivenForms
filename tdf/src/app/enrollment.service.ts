@@ -19,7 +19,7 @@ export class EnrollmentService {
       .pipe(catchError(this.errorHandler));
   }
 
-  errorHandler(error: HttpErrorResponse){
+  errorHandler(error: HttpErrorResponse) {
     return throwError(error);
   }
 }
