@@ -13,6 +13,7 @@
       <div *ngIf="userName.invalid && registrationForm.get('userName').touched">
         <small *ngIf="userName.errors?.required" class="text-danger">Username is required</small>  
         <small *ngIf="userName.errors?.minlength" class="text-danger">Username must be at least 3 characters</small>
+        <small *ngIf="userName.errors?.forbiddenName" class="text-danger">{{userName.errors?.forbiddenName.value}} Username is not allowed </small>
       </div>    
     </div>
     
@@ -23,7 +24,8 @@
 
     <div class="form-group">
       <label>Confirm Password</label>
-      <input formControlName="confirmPassword" type="password" class="form-control">
+      <input [class.is-invalid]="registrationForm.errors?.misMatch" formControlName="confirmPassword" type="password" class="form-control">
+      <small class="text-danger" *ngIf="registrationForm.errors?.misMatch">Passwords do not match</small>
     </div> 
 
     <div formGroupName="address">
