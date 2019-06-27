@@ -36,7 +36,7 @@ export class AppComponent {
   //     city: new FormControl(''),
   //     state: new FormControl(''),
   //     postalCode: new FormControl('')
-  //   }) 
+  //   })
   // });
 
   loadAPIData() {
@@ -44,6 +44,6 @@ export class AppComponent {
       userName: 'Bruce',
       password: 'test',
       confirmPassword: 'test'
-    })  
+    });
   }
 }

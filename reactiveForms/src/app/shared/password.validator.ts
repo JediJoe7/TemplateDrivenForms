@@ -7,6 +7,6 @@ export function PasswordValidator(control: AbstractControl): { [key: string]: bo
         return null;
     }
     return password && confirmPassword && password.value !== confirmPassword.value ?
-        { 'misMatch': true} :
+        { misMatch: true} :
         null;
 }
