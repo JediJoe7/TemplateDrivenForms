@@ -41,13 +41,13 @@ export class AppComponent implements OnInit {
       .subscribe(checkedValue => {
         const email = this.registrationForm.get('email');
         if (checkedValue) {
-          email.setValidators(Validators.required)
+          email.setValidators(Validators.required);
         } else {
           email.clearValidators();
         }
         email.updateValueAndValidity();
 
-      })
+      });
   }
 
   // registrationForm = new FormGroup({
